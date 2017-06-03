@@ -1,6 +1,30 @@
-var ready = function() {
-    $('a[data-rel="lightcase:myCollection:slideshow"]').lightcase({showSequenceInfo: false, transition: 'scrollHorizontal'});
-    $('a[data-rel="lightcase"]').lightcase();
+var ready = function () {
+    $('a[data-rel="lightcase:myCollection:slideshow"]').lightcase({
+        showSequenceInfo: false,
+        transition: 'scrollHorizontal',
+        onFinish: {
+            baz: function () {
+                hideScrollBar();
+            }
+        },
+        onClose: {
+            caz: function () {
+                showScrollBar();
+            }
+        }
+    });
+    $('a[data-rel="lightcase"]').lightcase({
+        onFinish: {
+            baz: function () {
+                hideScrollBar();
+            }
+        },
+        onClose: {
+            caz: function () {
+                showScrollBar();
+            }
+        }
+    });
 };
 
 

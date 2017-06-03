@@ -90,3 +90,15 @@ function refreshBlock(idOfBlock, infoArray)
         }
     }
 }
+
+function hideScrollBar(){
+    $('body').css({
+        'overflow-y': 'hidden',
+    })
+}
+
+function showScrollBar(){
+    $('body').css({
+        'overflow-y': 'auto',
+    })
+}

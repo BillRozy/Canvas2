@@ -9,7 +9,18 @@
 
     myDropzone.on('success', function(file, data){
       var obj = $(data + '');
-      obj.lightcase();
+      obj.lightcase({
+        onFinish: {
+          baz: function () {
+            hideScrollBar();
+          }
+        },
+        onClose: {
+          caz: function () {
+            showScrollBar();
+          }
+        }
+      });
       $('.shooting-block#<%= @category %> .slider-container').slick('slickAdd',obj);
     });
   };
