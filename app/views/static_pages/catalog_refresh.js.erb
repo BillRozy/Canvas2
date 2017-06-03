@@ -1,7 +1,9 @@
 var magic = function(){
   <% @result.each  do |founded| %>
   var item = $("<%= escape_javascript(render partial: 'shared/catalog_item_card', locals: {item: founded}) %>");
-  item.find("a").lightcase();
+  item.find('.mosaicflow__item').each(function () {
+    $(this).lightcase();
+  });
   item.appendTo(".catalog-finded-items");
   <% end %>
   $('.catalog-finded-items').waitForImages().done(function() {
