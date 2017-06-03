@@ -96,7 +96,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: image-url('parralax-video.jpg') no-repeat 45% 20%;
+  background: image-url('parralax-video.jpg') no-repeat 50% 50%;
+  background-size: cover;
   height: 100%;
   width: 35%;
   overflow: hidden;

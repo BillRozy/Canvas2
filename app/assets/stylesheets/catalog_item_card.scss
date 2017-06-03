@@ -22,6 +22,10 @@
       font-size: 1.1em;
     }
   }
+
+  .catalog-item-card-avatar:hover img{
+    filter: drop-shadow(1px 1px 2px gray);
+  }
 }
 @media  screen and (max-width: $screen-md-min) {
   .catalog-item-card {
@@ -231,6 +235,7 @@
 }
 
 .catalog-item-card-avatar{
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;

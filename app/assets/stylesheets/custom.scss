@@ -74,6 +74,10 @@ select {
   text-overflow: '';
 }
 
+input, textarea, select{
+  font-family: 'Gilroy';
+}
+
 html {
   min-height: 100%;
   height: 100%;

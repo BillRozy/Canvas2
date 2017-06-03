@@ -121,8 +121,8 @@
                   <div>
                     <%= shooting.category %>
                   </div>
-                  <div>
-                    <%= shooting.price %>
+                  <div style="font-size: 0.8em">
+                    <%= shooting.price.to_s + " РУБ/ЧАС" %>
                   </div>
                   <% if user_signed_in? && current_user.id == @portfolio.user_id %>
                       <%= link_to "", new_photo_path(category: shooting.category), class: "add_new_item", remote: true %>
@@ -132,7 +132,7 @@
                   <% @portfolio.user.photos.each do |photo| %>
                       <% if photo.category == shooting.category %>
                             <a class="showcase" href="<%= photo.image.url %>" data-rel="lightcase:myCollection:slideshow">
-                              <div class="image_plugin_container"><%= image_tag(photo.image.url, class: "img-in-gallery") %>
+                              <div class="image_plugin_container"><%= image_tag(photo.image.preview, class: "img-in-gallery") %>
                                 <% if isOwner && @edit_mode %> <%= link_to '', photos_destroy_path(id: photo.id), class: "delete_button photo_position" %>
                                 <% end %></div>
                             </a>
