@@ -1,4 +1,28 @@
 @import "z-consts";
+
+.catalog-item-card{
+
+  font-weight: 700;
+
+  a{
+    text-decoration: none;
+    color:hotpink;
+  }
+
+  a:hover{
+    text-decoration: underline;
+  }
+
+
+
+  .catalog-item-card-front-side {
+    .name-of-author {
+      font-weight: 100;
+      color: black;
+      font-size: 1.1em;
+    }
+  }
+}
 @media  screen and (max-width: $screen-md-min) {
   .catalog-item-card {
     position: relative;
@@ -21,6 +45,7 @@
       padding: 20px;
       margin: 20px;
       transition: 0.1s;
+      font-weight: 700;
     }
 
     .catalog-item-card-front-side {
@@ -201,7 +226,6 @@
     display: block;
     height: auto;
     width: 100%;
-    outline: 1px black solid;
     outline-offset: -1px;
   }
 }
@@ -228,11 +252,14 @@
   height: 100%;
   width: auto;
   max-width: 100%;
+  min-height: 120px;
+  min-width: 80px;
+  border-radius: 20px;
 }
 
 .catalog-item-card-price{
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: 100;
 }
 
 .mosaicflow__column {

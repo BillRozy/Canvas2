@@ -4,9 +4,51 @@
 $diamond-row-size: 210px;
 
 @font-face {
+  font-family: 'Gilroy';
+  src: url(asset-path('fonts/Gilroy-Light.woff'));
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url(asset-path('fonts/BebasNeue_Light.woff'));
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url(asset-path('fonts/BebasNeue_Regular.woff'));
+  font-weight: 700;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url(asset-path('fonts/BebasNeue_Regular.woff'));
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Code Pro Light';
   src: url(asset-path('fonts/CodeProLight.woff'));
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Code Pro Light';
+  src: url(asset-path('fonts/CodePro.woff'));
+  font-weight: 700;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: 'Code Pro Light';
+  src: url(asset-path('fonts/CodePro.woff'));
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -150,7 +192,7 @@ section {
 h1 {
   text-align: center;
   font-size: 3em;
-  font-weight: 100;
+  font-weight: 700;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
@@ -277,6 +319,7 @@ h2 {
   font-size: 1.3em;
   top: 10%;
   font-family: "Code Pro Light";
+  font-weight: 700;
 }
 
 .slider-wrapper span {
@@ -489,13 +532,14 @@ h2 {
 .registration-box {
   background-color: rgb(62, 63, 66);
   border-radius: 5px;
-  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-family: 'Code Pro Light';
   padding: 20px 0;
   max-width: 450px;
   min-width: 200px;
   min-height: 450px;
   width: 90%;
   margin: 0 auto;
+  font-weight: 100;
   filter: drop-shadow(0px 0px 5px black);
 }
 
@@ -527,6 +571,8 @@ h2 {
     min-height: 340px;
     max-height: 340px;
     height: 100%;
+    font-family: 'Code Pro Light';
+    font-weight: 100;
 
     .category_and_price_field{
       width:80%;

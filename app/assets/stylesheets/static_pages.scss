@@ -10,6 +10,8 @@
   overflow-y: auto;
   background: image-url('parralax-2.jpg');
   background-size: cover;
+  font-family: 'Code Pro Light';
+  font-weight: 700;
 }
 
 .parallax__layer {
@@ -57,6 +59,7 @@
   width: 100%;
   background: image-url('about_photo.webp') no-repeat;
   background-size: cover;
+  font-family: 'Gilroy';
 }
 
 .center-80-wrapper{
@@ -71,6 +74,7 @@
   display: flex;
   height: 45%;
   width: 100%;
+  font-family: 'Gilroy';
 }
 
 .in-parallax-footer{

@@ -146,6 +146,7 @@
   justify-content: center;
   font-size: 0.9em;
   font-family: 'Code Pro Light';
+  font-weight: 700;
   max-width: $screen-lg-min;
   min-width: $min_width;
   width:95%;
@@ -200,6 +201,7 @@
   border-radius: 10px;
   font-size: 0.9em;
   font-family: 'Code Pro Light';
+  font-weight: 700;
   margin-top: 5px;
 }
 .catalog-filter-form-box input[type = 'text'], .catalog-filter-form-box input[type = 'number']{
@@ -215,6 +217,7 @@
   padding: 5px;
   width:100px;
   font-family: 'Code Pro Light';
+  font-weight: 700;
   font-size: 1em;
   border: none;
   border-radius: 10px;
