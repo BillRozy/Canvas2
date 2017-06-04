@@ -9,6 +9,48 @@ $(document).on('turbolinks:load', function() {
     $('.spoiler-title').click(function(){
         $(this).next().slideToggle();
     });
+
+    $('a[data-rel="lightcase:myCollection:slideshow"]').lightcase({
+        showSequenceInfo: false,
+        transition: 'scrollHorizontal',
+        onFinish: {
+            baz: function () {
+                hideScrollBar();
+            }
+        },
+        onClose: {
+            caz: function () {
+                showScrollBar();
+            }
+        }
+    });
+    $('a[data-rel="lightcase"]').lightcase({
+        onFinish: {
+            baz: function () {
+                hideScrollBar();
+            }
+        },
+        onClose: {
+            caz: function () {
+                showScrollBar();
+            }
+        }
+    });
+
+
+    //replacing
+    TabsReplace({tabs_name: '.tab_item',
+        container_name: '.tabs_container',
+        active_tab: 'active_tab',
+        active_button: 'active_tab_button',
+        button_name: '.tabs_button'});
+
+    //fading
+    TabsReplace({tabs_name: '.tab_item_fade',
+        container_name: '.tabs_container_fade',
+        active_tab: 'active_tab_fade',
+        active_button: 'active_tab_button_fade',
+        button_name: '.tabs_button_fade'});
 });
 
 

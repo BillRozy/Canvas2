@@ -5,7 +5,7 @@
 
 <script>
   var section;
-
+  var timestamp = Date.now();
   var swipeToPhoto = function(){
     console.log("swipe to video");
     section.first().toggleClass("active-section", true);
@@ -25,7 +25,8 @@
     var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 
     function displaywheel(e){
-      var evt=window.event || e //equalize event object
+      timestamp = Date.now();
+      var evt=window.event || e; //equalize event object
       var delta=evt.detail? evt.detail*(-120) : evt.wheelDelta //check for detail first so Opera uses that instead of wheelDelta
       return delta;
     }
@@ -34,11 +35,13 @@
     section = $(".scrollable-section");
 
     holder.on(mousewheelevt, function(event) {
-      if (displaywheel(event) >= 0) {
-        swipeToPhoto();
-      }
-      else {
-        swipeToVideo();
+      if(Date.now() - timestamp > 400) {
+        if (displaywheel(event) >= 0) {
+          swipeToPhoto();
+        }
+        else {
+          swipeToVideo();
+        }
       }
     });
 
