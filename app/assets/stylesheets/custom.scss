@@ -88,6 +88,7 @@ html {
 
 html.loading {
   background: #FFF image-url('icons/rolling.gif') no-repeat 50% 50%;
+  background-size: 30px;
   -webkit-transition: background-color 0s;
   transition: background-color 0s;
 }
