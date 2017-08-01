@@ -1,14 +1,4 @@
 $(document).on('turbolinks:load', function() {
-    var allSpoilers = $('.spoiler-body');
-    console.log(allSpoilers);
-    allSpoilers.each(function(i,item){
-        if($(item).hasClass("closed")){
-            $(item).hide();
-        }
-    });
-    $('.spoiler-title').click(function(){
-        $(this).next().slideToggle();
-    });
 
     $('a[data-rel="lightcase:myCollection:slideshow"]').lightcase({
         showSequenceInfo: false,

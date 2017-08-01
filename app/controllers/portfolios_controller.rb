@@ -54,6 +54,18 @@ class PortfoliosController < ApplicationController
     render 'shootings/new'
   end
 
+  def portfolio_comments
+    @comments = Portfolio.find(params[:id]).comments
+    comments = []
+    @comments.each  do |comment|
+      obj = {:comment => comment.as_json, :user => comment.user.profile.as_json(only: [:name, :surname, :avatar])}
+      comments.push(obj)
+    end
+    msg = { :status => "ok", :message => comments}
+    render :json => msg
+  end
+
+
 
   def port_params
     params.require(:portfolio).permit(:description)

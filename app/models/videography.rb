@@ -1,4 +1,4 @@
-class Videography < ActiveRecord::Base
+class Videography < ApplicationRecord
   belongs_to :user
   has_one :profile, :through => :user
   has_one :portfolio, :through => :user

@@ -1,4 +1,4 @@
-class Shooting < ActiveRecord::Base
+class Shooting < ApplicationRecord
   include Filterable
   include ApplicationHelper
   belongs_to :user

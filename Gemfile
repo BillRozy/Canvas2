@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.5'
+ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.1.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem "better_errors"
@@ -11,16 +11,18 @@ group :development, :test do
 end
 # Use SCSS for stylesheets
 gem 'sqlite3'
-gem 'pundit'
 gem 'devise'
 gem 'rails_admin', '~> 1.0'
 gem 'sass-rails', '~> 5.0'
+gem 'webpacker', '~> 2.0'
+gem 'pug-rails', '~> 2.0'
+gem 'pug-ruby', '~> 1.0'
 gem "fog-aws"
 gem 'aws-sdk', '~> 2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'rails_serve_static_assets'

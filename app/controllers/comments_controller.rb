@@ -6,16 +6,13 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
 
-    respond_to do |format|
       if @comment.save
-        format.html { redirect_to current_user.portfolio }
-        format.js   {}
-        format.json { render json: @comment, status: :created, location: @current_user.portfolio }
+        msg = { :status => "ok", :message => @comment.as_json }
+        render :json => msg
       else
-        format.html { render action: current_user.portfolio }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        # format.html { render action: current_user.portfolio }
+        # format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   def edit

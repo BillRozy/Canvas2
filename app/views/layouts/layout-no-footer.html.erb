@@ -3,6 +3,7 @@
 <head>
   <%= display_meta_tags(default_meta_tags) %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_pack_tag 'application' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
    <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,5 +18,6 @@
 <button onclick="goToTop()" id="goToTopBtn" title="Back"></button>
 <%= yield %>
 <div id = tempObjects></div>
+<%= javascript_pack_tag 'application' %>
 </body>
 </html>

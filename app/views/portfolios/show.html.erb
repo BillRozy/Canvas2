@@ -36,7 +36,7 @@
 
 
 </script>
-<div class="page-wrapper">
+<div class="page-wrapper" id="app">
   <div class="portfolio-main-section">
     <div id="switch-buttons-block">
       <div id="photocamera-button" class="tabs_button tabs_button_fade active_tab_button active_tab_button_fade" clicked="true"></div>
@@ -113,8 +113,7 @@
   <div class="tabs_container">
     <div class="tab_item active_tab">
       <div class="container">
-        <div class="spoiler-title"><h1> ФОтоуслуги </h1></div>
-        <div class="spoiler-body">
+        <spoiler title="Фотоуслуги">
           <% @portfolio.user.shootings.each do |shooting| %>
               <div class="shooting-block" id=<%= shooting.category.gsub(/\s+/, "") %>>
                 <div class="shooting-description-block">
@@ -141,13 +140,12 @@
                 </div>
               </div>
           <% end %>
-        </div>
+        </spoiler>
       </div>
     </div>
     <div class="tab_item">
       <div class="container">
-        <div class="spoiler-title"><h1> Видеоуслуги </h1></div>
-        <div class="spoiler-body">
+        <spoiler title="Видеоуслуги">
           <% @portfolio.user.videographies.each do |videography| %>
               <div class="videography-block">
                 <div class="videography-description-block">
@@ -158,60 +156,34 @@
                     <%= videography.price %>
                   </div>
                   <% if user_signed_in? && current_user.id == @portfolio.user_id %>
-                        <%= link_to "", new_video_path(category: videography.category), class: "add_new_item", remote: true %>
+                      <%= link_to "", new_video_path(category: videography.category), class: "add_new_item", remote: true %>
                   <% end %>
                 </div>
                 <div class="slider-container">
                   <% @portfolio.user.videos.each do |video| %>
                       <% if video.category == videography.category %>
                           <div class="video_plugin_container">
-                          <%= youtube_video video.path %>
+                            <%= youtube_video video.path %>
                           </div>
                       <% end %>
                   <% end %>
                 </div>
               </div>
           <% end %>
-        </div>
+        </spoiler>
       </div>
     </div>
 
   </div>
 
   <div class="container" id=comments>
-    <div class="spoiler-title"><h1> Отзывы </h1></div>
-    <div class="spoiler-body closed">
-      <% @portfolio.comments.each do |comment| %>
-          <div class="comment-block">
-            <div class="comment-user">
-              <%= image_tag((comment.user.profile.avatar != nil) ? comment.user.profile.avatar : nil, class: "comment-avatar") %>
-              <!-- TODO add default image avatar! -->
-              <%= comment.user.profile.name %>
-            </div>
-            <div class=comment-body>
-              <%= comment.body %>
-            </div>
-            <div class=comment-date>
-              Оставлено: <br>
-              <%= comment.created_at.strftime("%Y-%m-%d") %>
-            </div>
-          </div>
-      <% end %>
+    <spoiler title="Отзывы">
+      <comment-list api="<%= portfolio_comments_path(@portfolio.id) %>"></comment-list>
 
       <% if user_signed_in? %>
-          <div class="new-comment-block">
-            <div><%= current_user.profile.name %> говорит:</div>
-            <%= form_for @comment, :html => {:multipart => true}, remote: true do |f| %>
-                <div class="comment-user">
-                  <%= image_tag((current_user.profile.avatar != nil) ? current_user.profile.avatar : nil, class: "comment-avatar") %>
-                </div>
-                <%= f.text_area :body, id: "new-comment-text" %>
-                <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
-                <%= f.submit "OK", class: "btn btn-primary" %>
-            <% end %>
-          </div>
+          <new-comment user_id="<%= current_user.id %>" user="<%= current_user.profile.name %>" avatarsrc="<%= (current_user.profile.avatar != nil) ? current_user.profile.avatar : nil %>" portfolio_id="<%= @portfolio.id %>"></new-comment>
       <% end %>
-    </div>
+    </spoiler>
 
   </div>
   <!--<div id="place-for-drop"></div>-->

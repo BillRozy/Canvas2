@@ -1,5 +1,7 @@
-<div class = "events-wrapper page-wrapper">
-<% @events.each  do |event|%>
-  <%= render partial: 'shared/event_summary', locals: {event: event} %>
-<% end %>
+<div class = "events-wrapper page-wrapper" id="app">
+    <vue-event-calendar :events="demoEvents"></vue-event-calendar>
+    <% @events.each  do |event|%>
+        <%= render partial: 'shared/event_summary', locals: {event: event} %>
+    <% end %>
 </div>
+

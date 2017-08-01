@@ -462,21 +462,3 @@
 .track a.next:active {
   background-position: -64px -198px;
 }
-
-.spoiler-title {
-  background-color: lightyellow;
-  height: 75px;
-  line-height: 75px;
-}
-
-.spoiler-title h1 {
-  margin: 0;
-}
-
-.spoiler-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-}

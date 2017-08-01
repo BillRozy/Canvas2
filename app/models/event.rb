@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   belongs_to :admin
   mount_uploader :image, ImageUploader
   validates :admin_id, presence: true

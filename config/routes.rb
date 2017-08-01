@@ -122,6 +122,7 @@ Rails.application.routes.draw do
   match '/edit_avatar', to: 'profiles#edit_avatar',  via: 'get', as: :edit_avatar
   match '/update_avatar', to: 'profiles#update_avatar',  via: 'patch', as: :update_avatar
   match '/upload_image', to: 'photos#upload',  via: 'post', as: :upload_image
+  match '/portfolios/:id/portfolio_comments', to: 'portfolios#portfolio_comments', via: 'get', as: :portfolio_comments
 
   # Example resource route with options:
   #   resources :products do

@@ -1,4 +1,4 @@
-class Portfolio < ActiveRecord::Base
+class Portfolio < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :ratings
