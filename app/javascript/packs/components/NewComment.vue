@@ -5,11 +5,12 @@
         #new_comment
             .comment-user
                 img.comment-avatar(:src="avatarsrc")
-            textarea(name="body", id="new-comment-text", v-model="commentText")
+            textarea(name="body", id="new-comment-text", v-model="commentText", placeholder="Введите свой отзыв...")
             input.btn.btn-primary(type="button", value="OK", @click="sendComment")
 </template>
 
 <script>
+    import EventBus from "../eventbus.js"
     import axios from 'axios'
     export default {
 
@@ -30,14 +31,17 @@
 
         methods: {
             sendComment(){
+                var self = this;
                 axios.post('/comments', {
                         comment: {
-                            user_id: this.user_id,
-                            body: this.commentText,
-                            portfolio_id: this.portfolio_id
+                            user_id: self.user_id,
+                            body: self.commentText,
+                            portfolio_id: self.portfolio_id
                         }
                 }, {responseType: 'json'})
                 .then(function (response) {
+                    EventBus.fire('comment:added', response.data.message);
+                    self.commentText = "";
                     console.log(response);
                 })
                 .catch(function (error) {
@@ -66,7 +70,7 @@
         background: white;
         border:1px solid black;
         margin:0;
-        padding: 5px 65px;
+        padding: 20px 65px;
         text-decoration: none;
         -moz-appearance: none;
         border-radius: 10px;

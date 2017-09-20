@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include PhotosHelper
   include StaticPagesHelper
-  include Pundit
 
   protected
 

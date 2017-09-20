@@ -178,11 +178,7 @@
 
   <div class="container" id=comments>
     <spoiler title="Отзывы">
-      <comment-list api="<%= portfolio_comments_path(@portfolio.id) %>"></comment-list>
-
-      <% if user_signed_in? %>
-          <new-comment user_id="<%= current_user.id %>" user="<%= current_user.profile.name %>" avatarsrc="<%= (current_user.profile.avatar != nil) ? current_user.profile.avatar : nil %>" portfolio_id="<%= @portfolio.id %>"></new-comment>
-      <% end %>
+      <comment-list api="<%= portfolio_comments_path(@portfolio.id) %>" is_authorized="<%= user_signed_in? %>" user_id="<%= current_user.id if current_user %>" user="<%= current_user.profile.name if current_user%>" avatarsrc="<%= ((current_user.profile.avatar != nil) ? current_user.profile.avatar : nil) if current_user %>" portfolio_id="<%= @portfolio.id %>"></comment-list>
     </spoiler>
 
   </div>

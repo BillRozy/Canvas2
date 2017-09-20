@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
 
       if @comment.save
-        msg = { :status => "ok", :message => @comment.as_json }
+        obj = {:comment => @comment.as_json, :user => @comment.user.profile.as_json(only: [:name, :surname, :avatar])}
+        msg = { :status => "ok", :message => obj.as_json }
         render :json => msg
       else
         # format.html { render action: current_user.portfolio }
