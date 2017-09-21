@@ -3,13 +3,13 @@ branch-defaults:
     environment:  LowCost-env
     group_suffix: null
   rails-5-webpack-version:
-    environment: Canvas
+    environment: Canvas51
     group_suffix: null
 global:
   application_name: Canvas 2
   branch: null
   default_ec2_keyname: id_rsa
-  default_platform: Ruby 2.3 (Puma)
+  default_platform: Ruby 2.3 (Passenger Standalone)
   default_region: eu-central-1
   profile: eb-cli
   repository: null
