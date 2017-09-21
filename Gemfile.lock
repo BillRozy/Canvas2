@@ -301,7 +301,7 @@ DEPENDENCIES
   jquery-turbolinks
   meta-tags
   mini_magick
-  nokogiri
+  nokogiri (~> 1.8.1)
   paperclip (~> 5.0.0)
   paperclip-av-transcoder
   pg

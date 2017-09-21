@@ -7,7 +7,7 @@ gem 'rails', '5.1.0'
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
-  gem "nokogiri"
+  gem "nokogiri", '~> 1.8.1'
 end
 # Use SCSS for stylesheets
 gem 'sqlite3'
