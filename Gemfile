@@ -14,7 +14,6 @@ gem 'sqlite3'
 gem 'devise'
 gem 'rails_admin', '~> 1.0'
 gem 'sass-rails', '~> 5.0'
-gem 'webpacker', '~> 2.0'
 gem 'pug-rails', '~> 2.0'
 gem 'pug-ruby', '~> 1.0'
 gem "fog-aws"
@@ -62,6 +61,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'webpacker', '~> 2.0'
 end
 
 group :production do
