@@ -1,4 +1,4 @@
-class RemoveAvatarFromUsers < ActiveRecord::Migration
+class RemoveAvatarFromUsers < ActiveRecord::Migration[5.0]
   def change
     remove_column :users, :avatar
     remove_column :users, :name

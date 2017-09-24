@@ -1,4 +1,4 @@
-class AddConfirmableAndLockableToUsers < ActiveRecord::Migration
+class AddConfirmableAndLockableToUsers < ActiveRecord::Migration[5.0]
   def self.up
     change_table :users do |t|
       ## Database authenticatable

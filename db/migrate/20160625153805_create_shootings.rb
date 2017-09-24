@@ -1,4 +1,4 @@
-class CreateShootings < ActiveRecord::Migration
+class CreateShootings < ActiveRecord::Migration[5.0]
   def change
     create_table :shootings do |t|
       t.string :category
