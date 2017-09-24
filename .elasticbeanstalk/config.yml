@@ -1,10 +1,14 @@
 branch-defaults:
   master:
-    environment:  LowCost-env
+    environment: LowCost-env
     group_suffix: null
   rails-5-webpack-version:
     environment: Canvas51
     group_suffix: null
+environment-defaults:
+  Canvas51:
+    branch: null
+    repository: null
 global:
   application_name: Canvas 2
   branch: null
