@@ -3,7 +3,6 @@ class CreateShootings < ActiveRecord::Migration[5.0]
     create_table :shootings do |t|
       t.string :category
       t.float :price
-      t.string :image
       t.string :description
       t.integer :user_id
 

@@ -3,7 +3,6 @@ class CreateVideographies < ActiveRecord::Migration[5.0]
     create_table :videographies do |t|
       t.string :category
       t.float :price
-      t.string :image
       t.string :description
       t.integer :user_id
 
